@@ -1,5 +1,6 @@
 from coinbase.wallet.client import Client
 from transactions import Transaction
+import json
 
 def readKeys(filename):
     file = open(filename, "r")
@@ -18,19 +19,15 @@ def getTransactionsInAllAccounts(api_key, api_secret):
         api_version='2017-12-07')
     accounts = client.get_accounts()
 
-    # print(len(accounts.data))
     transactions = []
 
     for account in accounts.data:
-        # print(account.get_transactions())
         transactions.append(account.get_transactions())
 
     return transactions
 
 
 def parseTransactionsInAccount(account):
-    #print(account['data'])
-
     account_transactions = []
 
     for transactions in account['data']:
@@ -49,7 +46,6 @@ def parseTransactionsInAccount(account):
 
         proceeds = transactions["native_amount"]["amount"]
         currency = transactions["native_amount"]["currency"]
-        #print(description, crypto_currency, crypto_amount, date_acquired, date_sold, proceeds, currency)
 
         current_transaction = Transaction(description, crypto_currency, crypto_amount, date_acquired, date_sold, proceeds, currency)
 
@@ -71,11 +67,20 @@ def printTransactions(account):
     return
 
 
+def printInFileAsJSON(transactions):
+    jsonTransactions = json.dumps([transaction.__dict__ for transaction in transactions])
+    print(jsonTransactions)
+    filename = "transactions.json"
+    file = open(filename, "w")
+    file.writelines(jsonTransactions)
+
+
 def main():
     api_key, api_secret = readKeys("./../../coinbase_keys.txt")
     transactions = getTransactionsInAllAccounts(api_key, api_secret)
     parsedTransactions = parseTransactions(transactions)
     printTransactions(parsedTransactions)
+    printInFileAsJSON(parsedTransactions)
 
 
 if __name__ == '__main__':
