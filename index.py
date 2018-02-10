@@ -62,10 +62,10 @@ def parseTransactions(transactions):
     return allTransactions
 
 
-def printTransactions(account):
-    for transactions in account:
-        transactions.print()
-    return
+# def printTransactions(account):
+#     for transactions in account:
+#         transactions.print()
+#     return
 
 
 def printInFileAsJSON(transactions):
@@ -77,7 +77,7 @@ def printInFileAsJSON(transactions):
 
 
 def main():
-    api_key, api_secret = readKeys("./../../coinbase_keys.txt")
+    api_key, api_secret = readKeys("./../coinbase_keys.txt")
     transactions = getTransactionsInAllAccounts(api_key, api_secret)
     parsedTransactions = parseTransactions(transactions) #list of tuples
     # printTransactions(parsedTransactions)

@@ -1,6 +1,7 @@
 var express     = require("express");
 var app         = express();
 var bodyparser  = require("body-parser");
+var exec        = require('child_process').execFile;
 
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
@@ -12,6 +13,15 @@ app.get("/convert", function(req, res) {
     }
     res.locals.currentUser = user;
     res.render("convert");
+
+    var fun =function(){
+    console.log("fun() start");
+    exec("../dist/index", function(err, data) {  
+            console.log(err)
+            console.log(data.toString());                       
+        });  
+    }
+    fun();
 });
 
 app.get("/", function(req, res) {

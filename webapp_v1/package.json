@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "child-process": "^1.0.2",
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "python-shell": "^0.4.0"
   }
 }
