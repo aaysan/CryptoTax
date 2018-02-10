@@ -1,5 +1,5 @@
 from coinbase.wallet.client import Client
-
+from transactions import Transaction
 
 def readKeys(filename):
     file = open(filename, "r")
@@ -11,7 +11,7 @@ def readKeys(filename):
     return api_key, api_secret
 
 
-def getTransactions(api_key, api_secret):
+def getTransactionsInAllAccounts(api_key, api_secret):
     client = Client(
         api_key=api_key,
         api_secret=api_secret,
@@ -28,10 +28,54 @@ def getTransactions(api_key, api_secret):
     return transactions
 
 
+def parseTransactionsInAccount(account):
+    #print(account['data'])
+
+    account_transactions = []
+
+    for transactions in account['data']:
+        date_acquired = None
+        date_sold = None
+        if "buy" == transactions["type"]:
+            date_acquired = transactions["updated_at"]
+        elif "sell" == transactions["type"]:
+            date_sold = transactions["updated_at"]
+        else:
+            continue
+        description = transactions["details"]["title"]
+
+        crypto_currency = transactions["amount"]["currency"]
+        crypto_amount = transactions["amount"]["amount"]
+
+        proceeds = transactions["native_amount"]["amount"]
+        currency = transactions["native_amount"]["currency"]
+        #print(description, crypto_currency, crypto_amount, date_acquired, date_sold, proceeds, currency)
+
+        current_transaction = Transaction(description, crypto_currency, crypto_amount, date_acquired, date_sold, proceeds, currency)
+
+        account_transactions.append(current_transaction)
+
+    return account_transactions
+
+
+def parseTransactions(transactions):
+    allTransactions = []
+    for account in transactions:
+        allTransactions.extend(parseTransactionsInAccount(account))
+    return allTransactions
+
+
+def printTransactions(account):
+    for transactions in account:
+        transactions.print()
+    return
+
+
 def main():
     api_key, api_secret = readKeys("./../../coinbase_keys.txt")
-    transactions = getTransactions(api_key, api_secret)
-    print(len(transactions))
+    transactions = getTransactionsInAllAccounts(api_key, api_secret)
+    parsedTransactions = parseTransactions(transactions)
+    printTransactions(parsedTransactions)
 
 
 if __name__ == '__main__':

@@ -1,8 +1,6 @@
 # Parsing the json data
 
 import json
-import pprint
-              
 
 file = open("json.txt","r") #get the json
 texts = file.read() #read it
@@ -25,8 +23,9 @@ for transactions in data['data']:
     description = transactions["details"]["title"]
     date_acquired = None
     date_sold = None
-
-
+    crypto_currency = transactions["amount"]["currency"]
+    crypto_amount = transactions["amount"]["amount"]
+    print(crypto_currency, crypto_amount)
 
     if "buy" in transactions:
         date_acquired = transactions["updated_at"]
@@ -36,4 +35,4 @@ for transactions in data['data']:
     proceeds = transactions["native_amount"]["amount"]
     currency = transactions["native_amount"]["currency"]
 
-    
+    # return (description, crypto_currency, crypto_amount)
