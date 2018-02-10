@@ -34,8 +34,8 @@ def parseTransactionsInAccount(account):
     account_transactions = []
 
     for transactions in account['data']:
-        date_acquired = None
-        date_sold = None
+        date_acquired = "-"
+        date_sold = "-"
         if "buy" == transactions["type"]:
             date_acquired = transactions["updated_at"]
         elif "sell" == transactions["type"]:
