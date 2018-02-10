@@ -1,0 +1,178 @@
+{
+  "data": [
+    {
+      "amount": {
+        "amount": "-0.06515560",
+        "currency": "LTC"
+      },
+      "created_at": "2018-02-10T17:55:08Z",
+      "description": null,
+      "details": {
+        "payment_method_name": "PURDUE FEDERAL CREDIT ... **********7909",
+        "subtitle": "Using PURDUE FEDERAL CREDIT ... **********7909",
+        "title": "Sold Litecoin"
+      },
+      "id": "01e62889-7405-511b-9127-28f972365824",
+      "instant_exchange": false,
+      "native_amount": {
+        "amount": "-9.01",
+        "currency": "USD"
+      },
+      "resource": "transaction",
+      "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/transactions/01e62889-7405-511b-9127-28f972365824",
+      "sell": {
+        "id": "6b68a0c6-7573-5515-a277-fdc7afe776a2",
+        "resource": "sell",
+        "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/sells/6b68a0c6-7573-5515-a277-fdc7afe776a2"
+      },
+      "status": "completed",
+      "type": "sell",
+      "updated_at": "2018-02-10T17:55:08Z"
+    },
+    {
+      "amount": {
+        "amount": "0.37069251",
+        "currency": "LTC"
+      },
+      "buy": {
+        "id": "38452795-5aa0-5720-b945-7365795dd47a",
+        "resource": "buy",
+        "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/buys/38452795-5aa0-5720-b945-7365795dd47a"
+      },
+      "created_at": "2018-02-02T17:32:51Z",
+      "description": null,
+      "details": {
+        "payment_method_name": "PURDUE FEDERAL CREDIT ... **********7909",
+        "subtitle": "Using PURDUE FEDERAL CREDIT ... **********7909",
+        "title": "Bought Litecoin"
+      },
+      "id": "3f6f8757-0328-5600-a937-0ab5fa2f3256",
+      "instant_exchange": false,
+      "native_amount": {
+        "amount": "50.00",
+        "currency": "USD"
+      },
+      "resource": "transaction",
+      "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/transactions/3f6f8757-0328-5600-a937-0ab5fa2f3256",
+      "status": "completed",
+      "type": "buy",
+      "updated_at": "2018-02-08T17:32:58Z"
+    },
+    {
+      "amount": {
+        "amount": "0.14508023",
+        "currency": "LTC"
+      },
+      "buy": {
+        "id": "15051160-a792-59fa-b6fc-26cabff95714",
+        "resource": "buy",
+        "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/buys/15051160-a792-59fa-b6fc-26cabff95714"
+      },
+      "created_at": "2017-12-12T14:29:29Z",
+      "description": null,
+      "details": {
+        "payment_method_name": "Visa debit ********0020",
+        "subtitle": "Using Visa debit ********0020",
+        "title": "Bought Litecoin"
+      },
+      "id": "2f940ab5-223e-5b94-a52c-88756a335643",
+      "instant_exchange": false,
+      "native_amount": {
+        "amount": "60.00",
+        "currency": "USD"
+      },
+      "resource": "transaction",
+      "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/transactions/2f940ab5-223e-5b94-a52c-88756a335643",
+      "status": "completed",
+      "type": "buy",
+      "updated_at": "2017-12-12T14:29:55Z"
+    },
+    {
+      "amount": {
+        "amount": "0.12556608",
+        "currency": "LTC"
+      },
+      "buy": {
+        "id": "90737071-70ba-586f-b750-cbd399387194",
+        "resource": "buy",
+        "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/buys/90737071-70ba-586f-b750-cbd399387194"
+      },
+      "created_at": "2017-12-11T22:35:20Z",
+      "description": null,
+      "details": {
+        "payment_method_name": "Visa debit ********0020",
+        "subtitle": "Using Visa debit ********0020",
+        "title": "Bought Litecoin"
+      },
+      "id": "944fb0aa-7bfc-5710-b6e0-603c4f75ec09",
+      "instant_exchange": false,
+      "native_amount": {
+        "amount": "30.00",
+        "currency": "USD"
+      },
+      "resource": "transaction",
+      "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/transactions/944fb0aa-7bfc-5710-b6e0-603c4f75ec09",
+      "status": "completed",
+      "type": "buy",
+      "updated_at": "2017-12-11T22:35:37Z"
+    },
+    {
+      "amount": {
+        "amount": "0.04564753",
+        "currency": "LTC"
+      },
+      "buy": {
+        "id": "21edfe9f-b6a6-556c-98c0-840be14d38db",
+        "resource": "buy",
+        "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/buys/21edfe9f-b6a6-556c-98c0-840be14d38db"
+      },
+      "created_at": "2017-12-11T21:48:39Z",
+      "description": null,
+      "details": {
+        "payment_method_name": "Visa debit ********0020",
+        "subtitle": "Using Visa debit ********0020",
+        "title": "Bought Litecoin"
+      },
+      "id": "8785d122-8970-597a-9f38-abddfda56544",
+      "instant_exchange": false,
+      "native_amount": {
+        "amount": "10.00",
+        "currency": "USD"
+      },
+      "resource": "transaction",
+      "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/transactions/8785d122-8970-597a-9f38-abddfda56544",
+      "status": "completed",
+      "type": "buy",
+      "updated_at": "2017-12-11T21:48:42Z"
+    },
+    {
+      "amount": {
+        "amount": "0.12951206",
+        "currency": "LTC"
+      },
+      "buy": {
+        "id": "bd6490d0-cc6e-500b-ae0e-84d852579d92",
+        "resource": "buy",
+        "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/buys/bd6490d0-cc6e-500b-ae0e-84d852579d92"
+      },
+      "created_at": "2017-12-10T05:05:15Z",
+      "description": null,
+      "details": {
+        "payment_method_name": "Visa debit ********0020",
+        "subtitle": "Using Visa debit ********0020",
+        "title": "Bought Litecoin"
+      },
+      "id": "9b7db656-451f-57a6-b877-93a154b4fef1",
+      "instant_exchange": false,
+      "native_amount": {
+        "amount": "20.00",
+        "currency": "USD"
+      },
+      "resource": "transaction",
+      "resource_path": "/v2/accounts/1e5020fd-2640-507f-b58d-c8b20f246a15/transactions/9b7db656-451f-57a6-b877-93a154b4fef1",
+      "status": "completed",
+      "type": "buy",
+      "updated_at": "2017-12-10T05:05:16Z"
+    }
+  ]
+}
