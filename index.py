@@ -78,7 +78,7 @@ def printInFileAsJSON(transactions):
 def main():
     api_key, api_secret = readKeys("./../../coinbase_keys.txt")
     transactions = getTransactionsInAllAccounts(api_key, api_secret)
-    parsedTransactions = parseTransactions(transactions)
+    parsedTransactions = parseTransactions(transactions) #list of tuples
     printTransactions(parsedTransactions)
     printInFileAsJSON(parsedTransactions)
 

@@ -1,6 +1,10 @@
 from fpdf import FPDF
 from PyPDF2 import PdfFileWriter, PdfFileReader
+from transactions import Transaction
 
+a = Transaction("yash","BTC","0.0000009","-","07/08/2018","755", "USD")
+test_list = []
+test_list.append(a)
 
 def add_to_pdf(test_list):
     iter = int(len(test_list) / 15) + 1
@@ -40,19 +44,30 @@ def pdf_creator(test_list,formnum):
         pdf.set_xy(xpos, ypos)
         pdf.set_font('arial', 'B', 8.0)
 
-        pdf.cell(ln=0, h=5.0, align='L', w=3, txt=tuple[0][:25], border=0)
+        pdf.cell(ln=0, h=5.0, align='L', w=3, txt=tuple.description[:25], border=0)
         xpos = xpos + 48
         pdf.set_xy(xpos, ypos)
-        pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple[1][:10], border=0)
+        pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple.date_acquired[:10], border=0)
         xpos = xpos + 18
         pdf.set_xy(xpos, ypos)
-        pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple[2][:10], border=0)
+        pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple.date_sold[:10], border=0)
         xpos = xpos + 18
         pdf.set_xy(xpos, ypos)
-        pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple[3][:10], border=0)
+
+        tuple.proceeds = tuple.proceeds + " " + tuple.currency
+        if tuple.date_sold != "-":
+            pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple.proceeds[:10], border=0)
+        else:
+            pdf.cell(ln=0, h=5.0, align='L', w=0, txt="-", border=0)
+
         xpos = xpos + 22
         pdf.set_xy(xpos, ypos)
-        pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple[4], border=0)
+
+        if tuple.date_acquired != "-":
+            pdf.cell(ln=0, h=5.0, align='L', w=0, txt=tuple.proceeds[:10], border=0)
+        else:
+            pdf.cell(ln=0, h=5.0, align='L', w=0, txt="-", border=0)
+
         ypos = ypos + 8.5
     pdf.add_page()
     pdf.output('test.pdf', 'F')
@@ -71,3 +86,4 @@ def pdf_creator(test_list,formnum):
     output.write(output_file)
     output_file.close()
 
+add_to_pdf(test_list)
