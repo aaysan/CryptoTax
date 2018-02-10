@@ -1,6 +1,7 @@
 from coinbase.wallet.client import Client
 from transactions import Transaction
 import json
+import add_to_pdf
 
 def readKeys(filename):
     file = open(filename, "r")
@@ -79,8 +80,14 @@ def main():
     api_key, api_secret = readKeys("./../../coinbase_keys.txt")
     transactions = getTransactionsInAllAccounts(api_key, api_secret)
     parsedTransactions = parseTransactions(transactions) #list of tuples
-    printTransactions(parsedTransactions)
-    printInFileAsJSON(parsedTransactions)
+    # printTransactions(parsedTransactions)
+    # printInFileAsJSON(parsedTransactions)
+    a = parseTransactions(transactions)
+    parsedTransactions.extend(a)
+    # asdf = []
+    # asdf.//mmmm
+    add_to_pdf.add_to_pdf(parsedTransactions)
+
 
 
 if __name__ == '__main__':
