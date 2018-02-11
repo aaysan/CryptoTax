@@ -1,6 +1,11 @@
 from fpdf import FPDF
 from PyPDF2 import PdfFileWriter, PdfFileReader
 import os
+from transactions import Transaction
+
+a =  Transaction("test1","BTC","0.000009","02/02/2018","01/01/2018","456.8", "USD")
+b = []
+b.append(a)
 
 def add_to_pdf(test_list):
     iter = int(len(test_list) / 15) + 1
@@ -14,7 +19,9 @@ def pdf_creator(test_list,formnum):
     pdf.add_page()
     pdf.set_xy(15, 51)
     pdf.set_font('arial', 'B', 10.0)
-    pdf.cell(ln=0, h=5.0, align='L', w=0, txt="Yash Bharatula", border=0)
+    pdf.cell(ln=0, h=5.0, align='L', w=0, txt="Rahul 'trashed' Patni", border=0)
+    pdf.set_x(130)
+    pdf.cell(ln=0, h=5,align='L',w=0,txt="123-45-6789", border=0)
     soldsum = 0
     boughtsum = 0
     ypos = 142
@@ -79,3 +86,5 @@ def pdf_creator(test_list,formnum):
     output.write(output_file)
     output_file.close()
     os.remove("test.pdf")
+
+add_to_pdf(b)
