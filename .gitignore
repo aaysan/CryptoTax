@@ -1,6 +1,7 @@
 *.idea/*
 *venv/*
 *__pycache__/*
+*/webapp_v1/__pycache__/add*
 *build/*
 *dist/*
 *.spec

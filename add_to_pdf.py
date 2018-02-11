@@ -3,9 +3,9 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 import os
 from transactions import Transaction
 
-a =  Transaction("test1","BTC","0.000009","02/02/2018","01/01/2018","456.8", "USD")
-b = []
-b.append(a)
+# a =  Transaction("test1","BTC","0.000009","02/02/2018","01/01/2018","456.8", "USD")
+# b = []
+# b.append(a)
 
 def add_to_pdf(test_list):
     iter = int(len(test_list) / 15) + 1
@@ -86,5 +86,5 @@ def pdf_creator(test_list,formnum):
     output.write(output_file)
     output_file.close()
     os.remove("test.pdf")
-
-add_to_pdf(b)
+#
+# add_to_pdf(b)
